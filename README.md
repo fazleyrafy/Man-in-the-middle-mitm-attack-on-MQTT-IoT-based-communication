@@ -287,14 +287,14 @@ async def handle_client(local_reader: asyncio.StreamReader, local_writer: asynci
         await remote_writer.wait_closed()
     except Exception:
         pass
-
+# ---------------- async-based continuous listening and connections----------------
 async def run_server(listen_host, listen_port, upstream_host, upstream_port):
     server = await asyncio.start_server(lambda r,w: handle_client(r,w,upstream_host,upstream_port), listen_host, listen_port)
     addr = server.sockets[0].getsockname()
     logger.info("MITM proxy listening on %s:%d forwarding to %s:%d", addr[0], addr[1], upstream_host, upstream_port)
     async with server:
         await server.serve_forever()
-
+# ---------------- Main function to initiate the process, parsing the arguments----------------
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--listen-host", default="0.0.0.0")
@@ -306,7 +306,7 @@ def main():
         asyncio.run(run_server(args.listen_host, args.listen_port, args.upstream_host, args.upstream_port))
     except KeyboardInterrupt:
         logger.info("Stopping")
-
+# ---------------- running as main----------------
 if __name__ == "__main__":
     main()
 
