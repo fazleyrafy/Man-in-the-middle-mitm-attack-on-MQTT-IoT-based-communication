@@ -359,9 +359,9 @@ for example >> sudo ettercap -T -M arp:remote /192.168.1.183//192.168.1.2/
 # 1. close the ettercap by pressing q
 # 2. run the following in attacker pi terminal
 # remove iptables rules (run exact deletions)
-# >> sudo iptables -t nat -D PREROUTING -p tcp -d $BROKER --dport 1883 -j DNAT --to-destination $ATTACKER:1883
-# >> sudo iptables -t nat -D POSTROUTING -j MASQUERADE
+>> sudo iptables -t nat -D PREROUTING -p tcp -d $BROKER --dport 1883 -j DNAT --to-destination $ATTACKER:1883
+>> sudo iptables -t nat -D POSTROUTING -j MASQUERADE
 # disable forwarding if you enabled it and want to revert
-# >> sudo sysctl -w net.ipv4.ip_forward=0
+>> sudo sysctl -w net.ipv4.ip_forward=0
 # 3. stop mosquitto using the following in broker's admin terminal
-# >> net stop mosquitto
+>> net stop mosquitto
