@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+authors:
+  - family-names: "Rafy"
+    given-names: "Md Fazley"
+    orcid: "https://orcid.org/0000-0003-3057-9546"
+title: "mqtt-mitm-attack-demo: A tutorial for MITM attacks on MQTT"
+version: 1.0.0
+date-released: 2025-10-30
+url: "https://github.com/fazleyrafy/Man-in-the-middle-mitm-attack-on-MQTT-IoT-based-communication"
