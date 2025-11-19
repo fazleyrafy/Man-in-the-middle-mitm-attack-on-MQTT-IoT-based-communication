@@ -1,4 +1,4 @@
-# Man-in-the-middle-mitm-attack-on-MQTT-IoT-based-communication
+# Man-in-the-middle mitm attack on MQTT IoT based communication
 A complete tutorial and toolkit for demonstrating a Man-in-the-Middle (MITM) attack on the MQTT protocol. This project is for educational and cybersecurity research purposes to understand IoT vulnerabilities. Includes Python (Asyncio, Paho-MQTT) for a payload-injection proxy and bash scripts using ettercap (ARP spoofing) and iptables.
 
 This repository includes:
